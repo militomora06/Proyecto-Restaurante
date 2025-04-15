@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="./CSS/carrito.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-background">
+            <h1>Teokbokki & Kimchi</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Menuc.html">Menú</a></li>
+                <li><a href="Pedidos.html">Pedidos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="cart-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items"></tbody>
+        </table>
+
+        <h3>Total: $<span id="total-price">0.00</span></h3>
+        <button id="vaciar-carrito">Vaciar Carrito</button>
+        <button id="hacer-compra">Hacer Compra</button>
+        <a href="Menuc.html" class="back-btn">⬅ Seguir Comprando</a>
+    </section>
+
+    <div id="modal-mensaje" class="modal">
+        <div class="modal-contenido">
+            <h2 id="modal-titulo"></h2>
+            <p id="modal-texto"></p>
+            <button onclick="cerrarModal()">Cerrar</button>
+        </div>
+    </div>
+
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-contenido {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function mostrarModal(titulo, mensaje) {
+            document.getElementById("modal-titulo").textContent = titulo;
+            document.getElementById("modal-texto").textContent = mensaje;
+            document.getElementById("modal-mensaje").style.display = "flex";
+        }
+
+        function cerrarModal() {
+            document.getElementById("modal-mensaje").style.display = "none";
+        }
+    </script>
+
+    <footer>
+        <p>📍 Ubicación: cra 14 #112-97, Usaquen,  Bogotá</p>
+        <p>📞 Teléfono: +57 312 345 6789</p>
+        <p>📧 Email: contacto@teokbokki&kimchi.com</p>
+    </footer>
+
+    <script src="./JS/carrito.js"></script>
+    <script src="./JS/mostrarcarrito.js"></script>
+</body>
+</html>

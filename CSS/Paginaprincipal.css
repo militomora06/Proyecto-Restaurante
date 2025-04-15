@@ -1,0 +1,175 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1c1c1d;
+    color: #d0e0f0; 
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Encabezado con imagen de fondo */
+.header-background {
+    position: relative;
+    background: url('../Img/header.jpg') no-repeat center center/cover;
+    height: 300px; /* Ajusta según la imagen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-background h1 {
+    font-size: 40px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);     
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+/* Barra de navegación */
+nav ul {
+    list-style: none;
+    padding: 10px 0;
+    background: #18222b;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #d0e0f0;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #57a6ff;
+}
+
+/* Sección de reservas */
+.reservations {
+    margin: 40px 0;
+}
+
+.reservations h2 {
+    font-size: 28px;
+}
+
+.reservations button {
+    background: #00627a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.reservations button:hover {
+    background: #004f5d;
+}
+
+/* Galería */
+.gallery {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.gallery h2 {
+    text-align: center;
+    margin-left: 0;
+    font-size: 30px;
+    color: #d0e0f0;
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 35pxpx;
+}
+
+.gallery-container img {
+    width: 260px;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 0;
+    transition: transform -0.3s;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.1);
+}
+
+.about {
+    margin: 95px ;
+    padding: 15px;
+    width: 85vw;
+    background: url('../Img/about-us.jpg') no-repeat center center/cover;
+    color: rgb(25, 14, 73);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.about h2 {
+    font-size: 28px;
+}
+
+.about p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.Collaborations{
+    margin: 95px ;
+    padding: 15px;
+    width: 85vw;
+    color: rgb(25, 14, 73);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.about h2 {
+    font-size: 28px;
+}
+
+.about p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Botón del carrito */
+.cart-button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.view-cart {
+    background: #0d2531;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.view-cart:hover {
+    background: #091f38;
+}
+
+/* Footer */
+footer {
+    background: #0f171a;
+    padding: 20px;
+    color: #d0e0f0;
+    font-size: 14px;
+}

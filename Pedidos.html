@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas - Teokbokki & Kimchi</title>
+    <link rel="stylesheet" href="./CSS/Pedidos.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-background">
+            <h1>Teokbokki & Kimchi</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Menuc.html">Menú</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="Pedidos">
+        <h2>Realiza tu Pedido</h2>
+        <p>Disfruta de una experiencia gastronómica inolvidable desde tu casa.</p>
+    
+        <form id="formPedido" method="get" action="index.html">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+    
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+    
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" required>
+    
+            <h3>Pedido:</h3>
+            <ul id="listaPedido"></ul> <!-- Aquí se mostrarán los productos -->
+    
+            <p><strong>Total del Pedido:</strong> $<span id="totalPedido">0.00</span></p>
+            <p><strong>Costo de Envío:</strong> $5.00</p>
+            <p><strong>Total a Pagar:</strong> $<span id="totalConEnvio">5.00</span></p>
+    
+            <button type="submit" class="btn-reservar">Realizar Pedido</button>
+        </form>
+    </section>
+
+    <div class="cart-button-container">
+        <button class="view-cart" onclick="window.location.href='carrito.html'">🛒 Ver Carrito</button>
+    </div>
+     
+    <!-- FOOTER -->
+    <footer>
+        <p>📍 Ubicación: cra 14 #112-97, Usaquen,  Bogotá</p>
+        <p>📞 Teléfono: +57 312 345 6789</p>
+        <p>📧 Email: contacto@teokbokki&kimchi.com</p>
+    </footer>
+
+</body>
+</html>
+

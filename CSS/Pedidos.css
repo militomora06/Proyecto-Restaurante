@@ -1,0 +1,194 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Fondo oscuro */
+    color: #E0E0E0; /* Letras en blanco */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+/* Encabezado con imagen de fondo */
+.header-background {
+    position: relative;
+    background: url('../Img/header.jpg') no-repeat center center/cover;
+    height: 300px; /* Ajusta según la imagen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-background h1 {
+    font-size: 40px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);     
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+/* --- Header con imagen de fondo --- */
+nav ul {
+    list-style: none;
+    padding: 10px 0;
+    background: #18222b;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #d0e0f0;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #57a6ff;
+}
+
+.Pedidos {
+    text-align: center;
+    padding: 50px 20px;
+    background-image: url('../Img/pedidos.jpg'); /* Cambia la imagen si tienes otra para pedidos */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.Pedidos::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Oscurecer para mejorar legibilidad */
+    z-index: 1;
+}
+
+.Pedidos h2, .Pedidos h3, .Pedidos p, .Pedidos form {
+    position: relative;
+    z-index: 2;
+    color: #E0F7FA;
+}
+
+.Pedidos h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #E0F7FA;
+}
+
+.Pedidos h3 {
+    font-size: 1.3rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #B3E5FC;
+}
+
+.Pedidos p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #B3E5FC;
+}
+
+/* --- FORMULARIO DE PEDIDOS --- */
+.Pedidos form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.Pedidos label {
+    font-size: 1.1rem;
+    margin: 10px 0 5px;
+    text-align: left;
+    color: #B3E5FC;
+}
+
+.Pedidos input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 15px;
+    background: #1F1F1F;
+    color: white;
+}
+
+#listaPedido {
+    text-align: left;
+    padding-left: 20px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.btn-reservar {
+    background-color: #84C7E0;
+    color: black;
+    font-size: 1.2rem;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-reservar:hover {
+    background-color: #5DA3C0;
+}
+
+.cart-button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.view-cart {
+    background: #0d2531;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.view-cart:hover {
+    background: #091f38;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #1d4950;
+    padding: 20px;
+    color: #B3E5FC;
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+    .header-background h1 {
+        font-size: 2.5rem;
+    }
+
+    form {
+        width: 90%;
+    }
+
+    .reservas h2 {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teokbokki & Kimchi</title>
+    <link rel="stylesheet" href="./CSS/Paginaprincipal.css">
+    <style>
+        /* Puedes agregar este bloque al CSS principal si quieres mantener la consistencia */
+        .collaborators-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        .collaborator {
+            text-align: center;
+        }
+        .collaborator img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-background">
+            <h1>Teokbokki & Kimchi</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Menuc.html">Menú</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+                <li><a href="Pedidos.html">Pedidos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="about">
+        <h2>About Us</h2>
+        <p>En Teokbokki & Kimchi nos especializamos en traer lo mejor de la gastronomía coreana con ingredientes auténticos que te haran tener una experiencia culinaria increibles</p>
+    </section>
+
+    <section class="gallery">
+        <h2>Galería</h2>
+        <div class="gallery-container">
+            <img src="./Img/comida 1.jpg" alt="Comida 1">
+            <img src="./Img/comida 2.jpg" alt="Comida 2">
+            <img src="./Img/Gogi-Koren-BBQ.jpg" alt="Restaurante">
+            <img src="./Img/plato especial.jpg" alt="Plato especial">
+        </div>
+    </section>
+
+    <section class="Collaboration">
+        <h2>Colaboradores</h2>
+        <div class="collaborators-container">
+            <div class="collaborator">
+                <img src="./Img/Ana Rodriguez.jpeg" alt="Ana Rodriguez">
+                <p>Ana Sofia Rodriguez</p>
+            </div>
+            <div class="collaborator">
+                <img src="./Img/Juan Morales.jpeg" alt="Juan Morales">
+                <p>Juan Camilo Morales</p>
+            </div>
+        </div>
+    </section>
+    
+    <div class="cart-button-container">
+        <button class="view-cart" onclick="window.location.href='carrito.html'">🛒 Ver Carrito</button>
+    </div>
+    
+    <footer>
+        <p>📍 Ubicación: cra 14 #112-97, Usaquen,  Bogotá</p>
+        <p>📞 Teléfono: +57 312 345 6789</p>
+        <p>📧 Email: contacto@teokbokki&kimchi.com</p>
+    </footer>
+</body>
+</html>

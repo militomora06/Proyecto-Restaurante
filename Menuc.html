@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú | Teokbokki & Kimchi</title>
+    <link rel="stylesheet" href="./CSS/Menustyle.css">
+</head>
+<body>
+    <header>
+        <div class="header-background">
+            <h1>Teokbokki & Kimchi</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+                <li><a href="Pedidos.html">Pedidos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2>Menú</h2>
+    <section id="menu">
+        <div class="categoria" id="entradas">
+            <h3>Entradas</h3>
+            <div class="menu-items" data-category="entrada"></div>
+        </div>
+
+        <div class="categoria" id="platos-fuertes">
+            <h3>Platos Fuertes</h3>
+            <div class="menu-items" data-category="plato-fuerte"></div>
+        </div>
+
+        <div class="categoria" id="postres">
+            <h3>Postres</h3>
+            <div class="menu-items" data-category="postre"></div>
+        </div>
+
+        <div class="categoria" id="bebidas">
+            <h3>Bebidas</h3>
+            <div class="menu-items" data-category="bebida"></div>
+        </div>
+    </section>
+
+    <a href="Menuc.html" class="back-btn">⬅ Volver al Menú</a>
+
+    <div class="cart-button-container">
+        <button class="view-cart" onclick="window.location.href='carrito.html'">🛒 Ver Carrito</button>
+    </div>
+
+    <footer>
+        <p>📍 Ubicación: cra 14 #112-97, Usaquen, Bogotá</p>
+        <p>📞 Teléfono: +57 312 345 6789</p>
+        <p>📧 Email: contacto@teokbokki&kimchi.com</p>
+    </footer>
+
+    <script src="JS/menu.js"></script>
+    <script src="JS/carrito.js"></script>
+    
+    
+</body>
+</html>
