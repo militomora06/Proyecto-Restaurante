@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function fetchMenu() {
     try {
-        const response = await fetch("https://script.google.com/macros/s/AKfycbzvdPKqT3kHS9fWWB7eHV5KZinaLbWpyeyHNWcsqQDflpCFf_ij1vgi67G18fcom6BPMw/exec");
+        const response = await fetch("https://script.google.com/macros/s/AKfycbxkdUK92F2NgziRZ9-lga-PQ0-mhloJs2KjUbyRk3nm4qcUhthfAng6RVfGbisdlaRB/exec?sheet=Pedidos");
 
         if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
 

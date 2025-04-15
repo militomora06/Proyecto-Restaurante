@@ -124,7 +124,7 @@ function enviarPedido() {
         "Valor del pedido": valorPedido.toFixed(2)
     };
 
-    fetch("https://script.google.com/macros/s/AKfycbxoVAfSVZZkLi1P6Y7zr2aVZyOGE_Qemh77w2PimIGmEGUHw2_bev9XlX5IWHD38yX2bQ/exec?sheet=Pedidos", {
+    fetch("https://script.google.com/macros/s/AKfycbxkdUK92F2NgziRZ9-lga-PQ0-mhloJs2KjUbyRk3nm4qcUhthfAng6RVfGbisdlaRB/exec?sheet=Pedidos", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(pedido)
