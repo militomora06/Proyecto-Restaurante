@@ -1,68 +1,82 @@
 document.addEventListener("DOMContentLoaded", () => {
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-    const listaPedido = document.getElementById("listaPedido");
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    const tablaPedido = document.getElementById("tablaPedido");
     const totalPedido = document.getElementById("totalPedido");
     const totalConEnvio = document.getElementById("totalConEnvio");
     const envio = 5.00;
 
-    function actualizarPedido() {
-        listaPedido.innerHTML = "";
+    function mostrarProductosCarrito() {
+        tablaPedido.innerHTML = "";
         let total = 0;
 
         carrito.forEach(producto => {
-            let li = document.createElement("li");
-            li.textContent = `${producto.nombre} x${producto.cantidad} - $${(producto.precio * producto.cantidad).toFixed(2)}`;
-            listaPedido.appendChild(li);
-            total += producto.precio * producto.cantidad;
+            const fila = document.createElement("tr");
+            const totalProducto = producto.precio * producto.cantidad;
+            total += totalProducto;
+
+            fila.innerHTML = `
+                <td>${producto.nombre}</td>
+                <td>$${producto.precio.toFixed(2)}</td>
+                <td>${producto.cantidad}</td>
+                <td>$${totalProducto.toFixed(2)}</td>
+            `;
+
+            tablaPedido.appendChild(fila);
         });
 
         totalPedido.textContent = total.toFixed(2);
         totalConEnvio.textContent = (total + envio).toFixed(2);
     }
 
-    actualizarPedido();
+    mostrarProductosCarrito();
 
     document.getElementById("formPedido").addEventListener("submit", async (e) => {
         e.preventDefault();
 
-        let nombre = document.getElementById("nombre").value;
-        let telefono = document.getElementById("telefono").value;
-        let direccion = document.getElementById("direccion").value;
+        const nombre = document.getElementById("nombre").value.trim();
+        const telefono = document.getElementById("telefono").value.trim();
+        const direccion = document.getElementById("direccion").value.trim();
 
-        if (carrito.length === 0) {
-            alert("El carrito está vacío. Agrega productos antes de hacer el pedido.");
+        if (!nombre || !telefono || !direccion) {
+            alert("Por favor completa todos los campos.");
             return;
         }
 
-        let pedido = {
+        if (carrito.length === 0) {
+            alert("El carrito está vacío.");
+            return;
+        }
+
+        const items = carrito.map(p => `${p.nombre} x${p.cantidad} ($${p.precio.toFixed(2)})`).join(", ");
+        const total = (parseFloat(totalPedido.textContent) + envio).toFixed(2);
+
+        const datos = {
             nombre,
             telefono,
             direccion,
-            productos: carrito.map(prod => ({
-                id: prod.id || "sin-id",
-                nombre: prod.nombre,
-                cantidad: prod.cantidad,
-                precio: prod.precio
-            })),
-            total: (parseFloat(totalPedido.textContent) + envio).toFixed(2)
+            items,
+            total
         };
 
         try {
-            let respuesta = await fetch("https://script.google.com/macros/s/AKfycbyPOOnPfOflIV7WYqm-N9OkLjsx6QwY-FrtX8vm1dFvPPkRZKbfKtYuvSHdFKL8CpjUfw/exec", {
+            const respuesta = await fetch("https://script.google.com/macros/s/AKfycbxkdUK92F2NgziRZ9-lga-PQ0-mhloJs2KjUbyRk3nm4qcUhthfAng6RVfGbisdlaRB/exec", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(pedido)
+                body: JSON.stringify(datos)
             });
 
-            let data = await respuesta.json();
-            console.log("Respuesta de la API:", data);
+            const resultado = await respuesta.json();
 
-            alert("Pedido realizado con éxito! 🎉");
-            localStorage.removeItem("carrito"); // Vaciar el carrito tras la compra
-            window.location.href = "index.html"; // Redirigir a la página principal
+            if (resultado.status === "success") {
+                alert("✅ ¡Pedido realizado con éxito!");
+                localStorage.removeItem("carrito");
+                window.location.href = "index.html";
+            } else {
+                alert("❌ Error al enviar el pedido. Inténtalo nuevamente.");
+            }
         } catch (error) {
-            console.error("Error al enviar el pedido:", error);
-            alert("Hubo un problema al enviar tu pedido. Intenta de nuevo.");
+            console.error("Error al enviar:", error);
+            alert("❌ Error de red. Intenta de nuevo.");
         }
     });
 });

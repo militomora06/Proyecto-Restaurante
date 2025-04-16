@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservas - Teokbokki & Kimchi</title>
+    <title>Realiza tu Pedido - Teokbokki & Kimchi</title>
     <link rel="stylesheet" href="./CSS/Pedidos.css">
 </head>
 <body>
@@ -24,24 +24,34 @@
     <section class="Pedidos">
         <h2>Realiza tu Pedido</h2>
         <p>Disfruta de una experiencia gastronómica inolvidable desde tu casa.</p>
-    
-        <form id="formPedido" method="get" action="index.html">
+
+        <form id="formPedido">
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" required>
-    
+
             <label for="telefono">Teléfono:</label>
             <input type="tel" id="telefono" name="telefono" required>
-    
+
             <label for="direccion">Dirección:</label>
             <input type="text" id="direccion" name="direccion" required>
-    
-            <h3>Pedido:</h3>
-            <ul id="listaPedido"></ul> <!-- Aquí se mostrarán los productos -->
-    
+
+            <h3>Resumen del Pedido:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaPedido"></tbody>
+            </table>
+
             <p><strong>Total del Pedido:</strong> $<span id="totalPedido">0.00</span></p>
             <p><strong>Costo de Envío:</strong> $5.00</p>
             <p><strong>Total a Pagar:</strong> $<span id="totalConEnvio">5.00</span></p>
-    
+
             <button type="submit" class="btn-reservar">Realizar Pedido</button>
         </form>
     </section>
@@ -49,14 +59,13 @@
     <div class="cart-button-container">
         <button class="view-cart" onclick="window.location.href='carrito.html'">🛒 Ver Carrito</button>
     </div>
-     
-    <!-- FOOTER -->
+
     <footer>
-        <p>📍 Ubicación: cra 14 #112-97, Usaquen,  Bogotá</p>
+        <p>📍 Ubicación: cra 14 #112-97, Usaquén, Bogotá</p>
         <p>📞 Teléfono: +57 312 345 6789</p>
-        <p>📧 Email: contacto@teokbokki&kimchi.com</p>
+        <p>📧 Email: contacto@teokbokkiykimchi.com</p>
     </footer>
 
+    <script src="./JS/pedidos.js"></script>
 </body>
 </html>
-
