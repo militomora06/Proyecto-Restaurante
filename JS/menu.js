@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function fetchMenu() {
     try {
-        const response = await fetch("https://script.google.com/macros/s/AKfycbwYvN_uXb10TWfvMn7hv73U0iHHE-SExkqkdAw18hxtt2ErU6JE3q-W1eijQowR-A4w/exec");
+        const response = await fetch("https://script.google.com/macros/s/AKfycbyxLnLgI7Po_5OwrtsW9BrTUcArzi2froTJZKEnYBuLPTXQX-5m1bLdtgiH-VeqGrDu/exec");
         if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
 
         const data = await response.json();
