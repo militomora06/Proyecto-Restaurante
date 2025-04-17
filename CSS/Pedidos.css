@@ -113,11 +113,11 @@ nav ul li a:hover {
 }
 
 .Pedidos input {
-    padding: 0px;
-    font-size: 2rem;
+    padding: 5px;
+    font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 100%;
+    width: 97%;
     margin-bottom: 15px;
     background: #1F1F1F;
     color: white;
