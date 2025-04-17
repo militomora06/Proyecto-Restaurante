@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("📦 Enviando datos:", datos);
 
         try {
-            const respuesta = await fetch("https://script.google.com/macros/s/AKfycbw5IwS3LEh01R1Okqy_R2NDgFGVQlMlIMi1Tc9XzyVDS3y6GcfCsqz3lwTeuxpLTGDn/exec", {
+            const respuesta = await fetch("https://script.google.com/macros/s/AKfycbwN9ygM09Yl7Ykgd-lN_VEEvJNLyEGRYO5qaAQlGO3K2V6ukNroRGZjejio8Hao7qPJ/exec", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(datos)
