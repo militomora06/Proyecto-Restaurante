@@ -42,8 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        if (carrito.length === 0) {
-            alert("El carrito está vacío.");
+        if (!Array.isArray(carrito) || carrito.length === 0) {
+            alert("El carrito está vacío. Agrega productos antes de hacer tu pedido.");
             return;
         }
 
@@ -58,6 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
             total
         };
 
+        console.log("📦 Enviando datos:", datos);
+
         try {
             const respuesta = await fetch("https://script.google.com/macros/s/AKfycbyOM1nA2LHKQWD1NSos0aCU6fxR3Adm8Sx2F5fQHS9DZx28c76GKj53gK3ll_8qJpFV/exec", {
                 method: "POST",
@@ -65,7 +67,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 body: JSON.stringify(datos)
             });
 
-            const resultado = await respuesta.json();
+            const texto = await respuesta.text();
+            console.log("📥 Respuesta cruda:", texto);
+
+            let resultado;
+            try {
+                resultado = JSON.parse(texto);
+            } catch (err) {
+                console.error("⚠️ Respuesta no es JSON válido:", texto);
+                alert("❌ El servidor respondió con un formato inesperado.");
+                return;
+            }
 
             if (resultado.status === "success") {
                 alert("✅ ¡Pedido realizado con éxito!");
@@ -75,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert("❌ Error al enviar el pedido. Inténtalo nuevamente.");
             }
         } catch (error) {
-            console.error("Error al enviar:", error);
+            console.error("❌ Error en el fetch:", error);
             alert("❌ Error de red. Intenta de nuevo.");
         }
     });
