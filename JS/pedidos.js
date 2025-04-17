@@ -66,10 +66,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(datos)
             });
-
+        
             const texto = await respuesta.text();
             console.log("📥 Respuesta cruda:", texto);
-
+        
             let resultado;
             try {
                 resultado = JSON.parse(texto);
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert("❌ El servidor respondió con un formato inesperado.");
                 return;
             }
-
+        
             if (resultado.status === "success") {
                 alert("✅ ¡Pedido realizado con éxito!");
                 localStorage.removeItem("carrito");
@@ -86,9 +86,10 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 alert("❌ Error al enviar el pedido. Inténtalo nuevamente.");
             }
+        
         } catch (error) {
             console.error("❌ Error en el fetch:", error);
             alert("❌ Error de red. Intenta de nuevo.");
-        }
+        }        
     });
 });
