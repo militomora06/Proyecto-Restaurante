@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(datos)
             });
-        
+            
             const texto = await respuesta.text();
             console.log("📥 Respuesta cruda:", texto);
         
