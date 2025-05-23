@@ -161,28 +161,21 @@ nav ul li a:hover {
     font-size: 16px;
     cursor: pointer;
 }
-
-body {
-  background-color: #121a2f;
-  color: #cbe4ff;
-  font-family: 'Segoe UI', sans-serif;
-  display: flex;
-  justify-content: center;
-  padding: 40px;
-}
-
 .form-container {
-  background-color: #1c2945;
+  background-color: rgba(255, 255, 255, 0.05); /* Transparente sobre azul */
   padding: 30px;
   border-radius: 15px;
-  width: 300px;
-  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+  max-width: 350px;
+  margin: auto;
+  color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 h2 {
+  color: #a3d8ff;
   text-align: center;
-  color: #85c1ff;
-  margin-bottom: 15px;
+  font-weight: bold;
+  margin-top: 20px;
 }
 
 form {
@@ -193,12 +186,18 @@ form {
 }
 
 input {
-  padding: 10px;
-  border: none;
+  padding: 10px 12px;
+  border: 1px solid #3d5a80;
   border-radius: 8px;
-  background-color: #e8f0fe;
-  color: #1a1a1a;
+  background-color: #f0f8ff;
   font-size: 14px;
+  color: #1a1a1a;
+}
+
+input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px #007bff88;
 }
 
 button {
@@ -208,20 +207,21 @@ button {
   background-color: #007bff;
   color: white;
   font-weight: bold;
+  font-size: 14px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #005dc1;
+  background-color: #0056b3;
 }
 
 #mensaje {
   text-align: center;
-  margin-top: 10px;
   font-size: 14px;
-  color: #a0d8ff;
+  color: #a0e9ff;
 }
+
 
 
 .view-cart:hover {
